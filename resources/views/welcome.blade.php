@@ -21,28 +21,24 @@
         <!-- Styles -->
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <style>
+            @font-face {
+                font-family: 'blog';
+                src: url({{ asset('img/Fonts/blog.ttf') }});
+            }
+
+            h1, p, label, td{
+                font-family: 'blog';
+                font-size: 24px !important;
+            }
+
+            td{
+                color: #00ffff;
+            }
+        </style>
     </head>
-    <body>
+    <body style="background-image: url({{ asset('img/elementos-separados/fondo.png') }})">
         <div class="flex-center position-ref full-height">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-                <a class="navbar-brand active" href="{{ route('home') }}">Buscar usuarios</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mr-auto">
-                        <div class="nav-item active">
-
-                        </div>
-                    </ul>
-                    <span class="navbar-text">
-                      <div class="nav-item active">
-                            <a class="nav-link" href="{{ route('person.list') }}">listado</a>
-                        </div>
-                    </span>
-                </div>
-            </nav>
 
             <div class="container">
                 @yield('content')

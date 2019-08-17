@@ -4,13 +4,14 @@
 <div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">RANKING</div>
+                <div class="card-header">
+                    <img src="{{ asset('img/elementos-separados/ranking.png') }}" alt="">
+                </div>
                 <table class="table table-hover">
                     <tr>
-                        <td>Puesto</td>
-                        <td>Nombre</td>
-                        <td>Points</td>
+                        <td><img src="{{ asset('img/elementos-separados/puesto.png') }}" alt=""></td>
+                        <td><img src="{{ asset('img/elementos-separados/nombre.png') }}" alt=""></td>
+                        <td><img src="{{ asset('img/elementos-separados/puntaje1.png') }}" alt=""></td>
                     </tr>
                     @foreach($person as $p)
 
@@ -22,7 +23,6 @@
 
                     @endforeach
                 </table>
-            </div>
         </div>
     </div>
 </div>
