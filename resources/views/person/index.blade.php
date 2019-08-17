@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Buscar Usuario</div>
+                <div class="card-header">Creciendo Juntos <div class="bg-primary">todo es posible</div></div>
 
                 <div class="card-body">
                     <form method="GET" action="{{ route('person') }}">
@@ -34,7 +34,7 @@
 
                         <div class="text-center">
                             <button type="submit" class="btn btn-info">
-                                Buscar
+                                Continuar
                             </button>
                         </div>
 

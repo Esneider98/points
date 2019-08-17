@@ -115,13 +115,10 @@ class PersonController extends Controller
     public function update(Request $request, Person $person, $id)
     {
         $person = Person::where('id', '=', $id)->first();
-        $person->name       = $request['name'];
-        $person->typeDoc    =   $request['typeDoc'];
-        $person->numberDoc  =   $request['numberDoc'];
-        $person->profession =   $request['profession'];
-        $person->email      =   $request['email'];
         $person->points     =   $request['points'];
         $person->save();
+
+        $this->list(1);
 
         return redirect()->route('home');
     }
@@ -144,5 +141,17 @@ class PersonController extends Controller
             ->orderBy('points', 'desc')
             ->get();
         return view('person/shows', compact('person', 'doc'));
+    }
+
+    public function ajax(){
+
+        $person = DB::table('person')
+            ->orderBy('points', 'desc')
+            ->get();
+
+        $person = sizeof($person);
+
+
+        return json_encode($person);
     }
 }
