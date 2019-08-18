@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <img src="{{ asset('img/elementos-separados/Recurso 1.png') }}" alt="">
         <div class="col-md-8">
-            <form method="GET" action="{{ route('person') }}">
+            <form method="GET" action="{{ route('person') }}" id="myform">
                 @csrf
 
                 <div class="form-group row">
@@ -30,13 +30,16 @@
                 </div>
 
                 <div class="text-center">
-                    <button type="submit" class="btn btn-info">
-                        Continuar
-                    </button>
+                    <img class="submitableimage" src="{{ asset('img/elementos-separados/Recurso 11.png') }}" alt="">
                 </div>
 
             </form>
         </div>
     </div>
 </div>
+<script>
+    $('img.submitableimage').click(function(){
+        $('#myform').submit();
+    });
+</script>
 @endsection

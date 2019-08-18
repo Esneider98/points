@@ -1,13 +1,19 @@
 @extends('welcome')
 
 @section('content')
+    <style>
+        .img{
+            opacity: 0.1;
+            filter: alpha(opacity=50); /* For IE8 and earlier */
+        }
+    </style>
 <div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="text-center">
                 <img src="{{ asset('img/elementos-separados/Recurso 1.png') }}" alt="">
             </div>
-            <form method="POST" action="{{ route('person.store') }}">
+            <form method="POST" action="{{ route('person.store') }}" id="myform">
                 @csrf
 
                 <div class="form-group row">
@@ -72,10 +78,8 @@
                     </div>
                 </div>
 
-                <div class="text-center">
-                    <button type="submit" class="btn btn-info" id="disable">
-                        Crear
-                    </button>
+                <div class="text-center" id="disable">
+                    <img class="submitableimage" src="{{ asset('img/elementos-separados/Recurso 7.png') }}" alt="">
                 </div>
 
             </form>
@@ -87,5 +91,9 @@
     function myFuntion(){
         $("#chect").prop('checked') == true ? $("#disable").show() : $("#disable").hide();
     }
+
+    $('img.submitableimage').click(function(){
+        $('#myform').submit();
+    });
 </script>
 @endsection
