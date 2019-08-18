@@ -137,10 +137,10 @@ class PersonController extends Controller
             2 => 'Tarjeta identidad',
             3 => 'Pasaporte permanencía',
         );
-        $person = DB::table('person')
-            ->orderBy('points', 'desc')
+        $person = DB::table('person as p')
+            ->orderBy('p.points', 'desc')
             ->get();
-        return view('person/shows', compact('person', 'doc'));
+        return view('person/shows', compact('person', 'desc'));
     }
 
     public function ajax(){

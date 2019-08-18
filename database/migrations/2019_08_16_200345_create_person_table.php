@@ -20,7 +20,7 @@ class CreatePersonTable extends Migration
             $table->string('numberDoc');
             $table->string('profession');
             $table->string('email');
-            $table->string('points');
+            $table->integer('points');
             $table->timestamps();
         });
     }
