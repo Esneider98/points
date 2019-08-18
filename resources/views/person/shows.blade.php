@@ -27,19 +27,6 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function() {
-        function changeNumber() {
-            $.ajax({
-                type: "GET",
-                url: "{{ route('person.ajax') }}",
-                success: function(data) {
-                    if(data != '{{sizeof($person)}}' ){
-                        location.reload(true);
-                    }
-                }
-            });
-        }
-        setInterval(changeNumber, 3000);
-    });
+    setTimeout('document.location.reload()', 10000);
 </script>
 @endsection
