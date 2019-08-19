@@ -1,11 +1,21 @@
 @extends('welcome')
 
 @section('content')
+    <style>
+
+        h1, p, label, td{
+            font-size: 12px !important;
+        }
+
+        .img{
+            width: 70%;
+        }
+    </style>
 <div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-                <div class="card-header">
-                    <img src="{{ asset('img/elementos-separados/ranking.png') }}" alt="">
+                <div class="text-center">
+                    <img class="img" src="{{ asset('img/elementos-separados/ranking.png') }}" alt="">
                 </div>
                 <table class="table table-hover">
                     <tr>

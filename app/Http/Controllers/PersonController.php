@@ -149,9 +149,6 @@ class PersonController extends Controller
             ->orderBy('points', 'desc')
             ->get();
 
-        $person = sizeof($person);
-
-
-        return json_encode($person);
+        return json_encode(array("person" => $person));
     }
 }
