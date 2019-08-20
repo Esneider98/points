@@ -4,11 +4,11 @@
     <style>
 
         h1, p, label, td{
-            font-size: 12px !important;
+            font-size: 24px !important;
         }
 
         .img{
-            width: 70%;
+            width: 100%;
         }
     </style>
 <div>
