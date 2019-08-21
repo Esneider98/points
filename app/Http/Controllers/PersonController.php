@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Person;
+use App\Http\Requests\PersonRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Array_;
@@ -61,7 +62,7 @@ class PersonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PersonRequest  $request)
     {
         $person = new Person();
         $person->name       = $request['name'];
@@ -72,6 +73,7 @@ class PersonController extends Controller
         $person->points     =   $request['points'];
         $person->save();
 
+        $request->session()->flash('alert-success', 'Se crea usuario: '.$person->name.'');
         return redirect()->route('home');
     }
 
@@ -115,11 +117,12 @@ class PersonController extends Controller
     public function update(Request $request, Person $person, $id)
     {
         $person = Person::where('id', '=', $id)->first();
-        $person->points     =   $request['points'];
+        $person->points     =   $request['points']+$person->points;
         $person->save();
 
         $this->list(1);
 
+        $request->session()->flash('alert-success', 'Se actualiza los puntos, para un total de: '.$person->points);
         return redirect()->route('home');
     }
 

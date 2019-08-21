@@ -18,7 +18,7 @@
                     </label>
 
                     <div class="col-md-6">
-                        <input type="number" name="points" class="form-control" value="{{$person->points}}">
+                        <input type="number" name="points" class="form-control" value="" placeholder="{{$person->points}}">
                     </div>
                 </div>
 

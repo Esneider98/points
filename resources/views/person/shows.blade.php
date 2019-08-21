@@ -7,9 +7,6 @@
             font-size: 24px !important;
         }
 
-        .img{
-            width: 100%;
-        }
     </style>
 <div>
     <div class="row justify-content-center">

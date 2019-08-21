@@ -22,6 +22,7 @@
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control" name="name" autocomplete="name" autofocus>
                     </div>
+                    {!! $errors->first('name','<small>:message</small><br>') !!}
                 </div>
 
                 <div class="form-group row">
@@ -34,6 +35,7 @@
                             @endfor
                         </select>
                     </div>
+                    {!! $errors->first('typeDoc','<small>:message</small><br>') !!}
                 </div>
 
                 <div class="form-group row">
@@ -41,6 +43,7 @@
                     <div class="col-md-6">
                         <input type="text" name="numberDoc" class="form-control" value="{{ $data['numberDoc'] }}">
                     </div>
+                    {!! $errors->first('numberDoc','<small>:message</small><br>') !!}
                 </div>
 
                 <div class="form-group row">
@@ -49,6 +52,7 @@
                     <div class="col-md-6">
                         <input type="text" name="profession" class="form-control">
                     </div>
+                    {!! $errors->first('profession','<small>:message</small><br>') !!}
                 </div>
 
                 <div class="form-group row">
@@ -57,6 +61,7 @@
                     <div class="col-md-6">
                         <input type="email" class="form-control" name="email">
                     </div>
+                    {!! $errors->first('email','<small>:message</small><br>') !!}
                 </div>
 
                 <div class="form-group row">
@@ -65,6 +70,7 @@
                     <div class="col-md-6">
                         <input type="number" name="points" class="form-control">
                     </div>
+                    {!! $errors->first('points','<small>:message</small><br>') !!}
                 </div>
 
 
